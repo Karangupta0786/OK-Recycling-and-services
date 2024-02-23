@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.Register;
+package com.okjunkstore.beta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +12,6 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
-import com.okjunkstore.beta.R;
-import com.okjunkstore.beta.RetailerDashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -26,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     Animation topanim,bottomanim;
 
     ImageView ok,truck;
- //   TextView textView,textView2;
-
     FirebaseAuth auth;
     FirebaseUser user;
 
@@ -37,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        // Firebase Auth
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         //Animations
         topanim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomanim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
@@ -44,15 +43,9 @@ public class MainActivity extends AppCompatActivity {
         //Hooks
         ok = findViewById(R.id.imageView);
         truck = findViewById(R.id.truck);
-//        textView = findViewById(R.id.textView);
-//        textView2 = findViewById(R.id.textView2);
 
         ok.setAnimation(topanim);
-//        textView.setAnimation(topanim);
         truck.setAnimation(bottomanim);
-//        textView2.setAnimation(bottomanim);
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -69,11 +62,12 @@ public class MainActivity extends AppCompatActivity {
         },SPLASH_SCREEN);
     }
 
-    /*@Override
+/*    @Override
     protected void onStart() {
         super.onStart();
-        if (user == null){
-            startActivity(new Intent(MainActivity.this,signup.class));
+        if (user == null) {
+            startActivity(new Intent(MainActivity.this, signup.class));
             finish();
-        }*/
+        }
+    }*/
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDEDED"
-    tools:context=".Register.MainActivity">
+    tools:context=".MainActivity">
 
     <!--    <TextView-->
     <!--        android:id="@+id/textView"-->
@@ -47,25 +47,20 @@
         android:id="@+id/imageView"
         android:layout_width="@dimen/_120mdp"
         android:layout_height="@dimen/_120mdp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:src="@drawable/okt"
+        android:src="@drawable/oknew"
         android:transitionName="logo_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/truck"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_600mdp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:src="@drawable/splash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
