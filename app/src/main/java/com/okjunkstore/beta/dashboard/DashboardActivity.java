@@ -23,16 +23,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-import com.okjunkstore.beta.FragmentsRetailerDashbord.RetailerBuyFragment;
-import com.okjunkstore.beta.FragmentsRetailerDashbord.RetailerDashboardFragment;
-import com.okjunkstore.beta.FragmentsRetailerDashbord.RetailerProfileFragment;
-import com.okjunkstore.beta.FragmentsRetailerDashbord.RetailerSellFragment;
+import com.okjunkstore.beta.dashboard.buy.BuyFragment;
+import com.okjunkstore.beta.dashboard.home.DashboardFragment;
+import com.okjunkstore.beta.dashboard.myImpact.ProfileFragment;
+import com.okjunkstore.beta.dashboard.sell.SellFragment;
 import com.okjunkstore.beta.NavigationDrawer.ServiceLocations;
 import com.okjunkstore.beta.NavigationDrawer.TermsAndConditions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.okjunkstore.beta.R;
-import com.okjunkstore.beta.SeePrices;
+import com.okjunkstore.beta.dashboard.home.SeePrices;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -83,7 +83,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         contentView = findViewById(R.id.content);
 
         chipNavigationBar = findViewById(R.id.bottom_nav_menu);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new RetailerDashboardFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DashboardFragment()).commit();
         chipNavigationBar.setItemSelected(R.id.bottom_nav_dashboard,true);
         bottomMenu();
 
@@ -255,20 +255,20 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 Fragment fragment = null;
                 switch (i){
                     case R.id.bottom_nav_dashboard:
-                        fragment = new RetailerDashboardFragment();
+                        fragment = new DashboardFragment();
                         title.setText("OK Junk Store");
                         break;
                     case R.id.bottom_nav_sell:
-                        fragment = new RetailerSellFragment();
+                        fragment = new SellFragment();
                         title.setText("OK Junk Store");
                         break;
                     case R.id.bottom_nav_buy:
-                        fragment = new RetailerBuyFragment();
+                        fragment = new BuyFragment();
                         title.setText("OK Junk Store");
                         permission();
                         break;
                     case R.id.bottom_nav_profile:
-                        fragment = new RetailerProfileFragment();
+                        fragment = new ProfileFragment();
                         title.setText("OK Services");
                         break;
                 }

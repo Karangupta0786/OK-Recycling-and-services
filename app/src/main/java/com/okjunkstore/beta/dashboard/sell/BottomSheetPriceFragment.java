@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.FragmentsRetailerDashbord;
+package com.okjunkstore.beta.dashboard.sell;
 
 import android.os.Bundle;
 

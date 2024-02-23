@@ -1,8 +1,10 @@
-package com.okjunkstore.beta;
+package com.okjunkstore.beta.dashboard.myImpact;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.okjunkstore.beta.R;
 
 public class HowWeWork extends AppCompatActivity {
 

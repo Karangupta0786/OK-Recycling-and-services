@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blueSky"
-    tools:context=".FragmentsRetailerDashbord.RetailerDashboardFragment">
+    tools:context=".dashboard.home.DashboardFragment">
 
     <ScrollView
         android:id="@+id/scroll"
@@ -43,7 +43,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="16dp"
                 android:text="DARK"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <soup.neumorphism.NeumorphCardView
                 android:layout_width="match_parent"

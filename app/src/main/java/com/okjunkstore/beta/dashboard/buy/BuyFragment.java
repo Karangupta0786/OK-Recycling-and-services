@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.FragmentsRetailerDashbord;
+package com.okjunkstore.beta.dashboard.buy;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -12,7 +12,7 @@ import com.okjunkstore.beta.BuyFragments.FragmentAdapter;
 import com.okjunkstore.beta.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class RetailerBuyFragment extends Fragment {
+public class BuyFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -21,7 +21,7 @@ public class RetailerBuyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_retailer_buy, container, false);
+        View view = inflater.inflate(R.layout.fragment_buy, container, false);
 
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(new FragmentAdapter(getActivity().getSupportFragmentManager()));

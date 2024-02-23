@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/lightWhiteDN"
     android:orientation="vertical"
-    tools:context=".FragmentsRetailerDashbord.RetailerBuyFragment">
+    tools:context=".dashboard.buy.BuyFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"

@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.FragmentsRetailerDashbord;
+package com.okjunkstore.beta.dashboard.myImpact;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -24,15 +24,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.okjunkstore.beta.HowWeWork;
 import com.okjunkstore.beta.R;
 import com.okjunkstore.beta.UserDashboard;
 import com.okjunkstore.beta.UserProfile;
 import com.google.android.material.button.MaterialButton;
 
-public class RetailerProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    public RetailerProfileFragment(){
+    public ProfileFragment(){
     }
 
     MaterialButton profile, signup;
@@ -49,7 +48,7 @@ public class RetailerProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_retailer_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         recycled = view.findViewById(R.id.recycled_kg);
         tree = view.findViewById(R.id.tree_saved);

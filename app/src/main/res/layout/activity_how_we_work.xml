@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:transitionName="transition_signup"
-    tools:context=".HowWeWork">
+    tools:context=".dashboard.myImpact.HowWeWork">
 
     <TextView
         android:layout_width="wrap_content"

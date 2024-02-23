@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_theme"
-    tools:context=".SeePrices">
+    tools:context=".dashboard.home.SeePrices">
 
     <LinearLayout
         android:layout_width="match_parent"

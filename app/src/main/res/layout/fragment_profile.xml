@@ -7,7 +7,7 @@
     android:background="@color/darkBlue"
     android:padding="10dp"
     android:transitionName="transition_info"
-    tools:context=".FragmentsRetailerDashbord.RetailerProfileFragment">
+    tools:context=".dashboard.myImpact.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

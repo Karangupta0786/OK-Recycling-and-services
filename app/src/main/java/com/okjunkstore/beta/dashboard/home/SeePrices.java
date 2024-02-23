@@ -1,4 +1,4 @@
-package com.okjunkstore.beta;
+package com.okjunkstore.beta.dashboard.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.okjunkstore.beta.R;
 
 public class SeePrices extends AppCompatActivity {
     TextView washingMachine,washingMachine2,washingMachine5,fridge,fridge2,fridge5,books,books5,books10,plastics,plastics5,plastics10,steels,steels5,steels10,irons,irons5,irons10,al,cu,brass;

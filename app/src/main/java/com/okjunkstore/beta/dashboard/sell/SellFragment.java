@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.FragmentsRetailerDashbord;
+package com.okjunkstore.beta.dashboard.sell;
 
 import android.Manifest;
 import android.app.Activity;
@@ -20,12 +20,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +34,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import soup.neumorphism.NeumorphCardView;
 
-public class RetailerSellFragment extends Fragment {
+public class SellFragment extends Fragment {
 
     static final int REQUEST_CALL = 1;
     FloatingActionButton call;
@@ -72,7 +69,7 @@ public class RetailerSellFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_retailer_sell, container, false);
+        View v = inflater.inflate(R.layout.fragment_sell, container, false);
 
         call = v.findViewById(R.id.callUs);
         sellActivity = v.findViewById(R.id.post);

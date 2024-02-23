@@ -17,13 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beta">
         <activity
-            android:name=".SeePrices"
+            android:name=".dashboard.home.SeePrices"
             android:exported="false" />
         <activity
             android:name=".ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".HowWeWork"
+            android:name=".dashboard.myImpact.HowWeWork"
             android:exported="false"/>
         <activity
             android:name=".NavigationDrawer.PrivacyPolicy"

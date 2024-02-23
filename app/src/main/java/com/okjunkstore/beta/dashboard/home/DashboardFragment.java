@@ -1,25 +1,18 @@
-package com.okjunkstore.beta.FragmentsRetailerDashbord;
+package com.okjunkstore.beta.dashboard.home;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Pair;
@@ -27,8 +20,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -36,7 +27,6 @@ import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.interfaces.ItemClickListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -47,7 +37,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.okjunkstore.beta.SeePrices;
 import com.okjunkstore.beta.UserDashboard;
 
 import java.util.ArrayList;
@@ -55,7 +44,7 @@ import java.util.List;
 
 import soup.neumorphism.NeumorphCardView;
 
-public class RetailerDashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
 //////////internet
     RelativeLayout internetNotLayout;
@@ -96,7 +85,7 @@ public class RetailerDashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_retailer_dashboard, container, false);
+        View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         switchMaterial = v.findViewById(R.id.switch_theme);
         switchMaterial.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
