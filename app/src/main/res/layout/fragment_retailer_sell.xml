@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteDN"
+    tools:context=".FragmentsRetailerDashbord.RetailerSellFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/corner_top"
+        android:backgroundTint="@color/background_theme"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/card_call"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="wrap_content"
+                android:background="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeType="flat"
+                android:clickable="true"
+                app:neumorph_shapeAppearance="@style/neumorphismCard"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textColor="@color/blackDN"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="@dimen/_3ssp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Order by call"
+                        android:textColor="@color/blackDN"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/guideline_recycle" />
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:background="@color/background"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/light_shadow"
+                        app:neumorph_shadowElevation="@dimen/_5sdp"
+                        app:neumorph_shapeType="basin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_baseline_phone_24"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_recycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </soup.neumorphism.NeumorphCardView>
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/card_sell_now"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="wrap_content"
+                android:background="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                android:transitionName="transition_sell"
+                app:neumorph_shapeType="flat"
+                android:clickable="true"
+                android:longClickable="true"
+                android:contextClickable="true"
+                app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sell Now"
+                        android:textColor="@color/blackDN"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="3dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Order online"
+                        android:textColor="@color/blackDN"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/guideline_recycle_2" />
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/card_recycle_2"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:background="@color/background"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/light_shadow"
+                        app:neumorph_shadowElevation="@dimen/_5sdp"
+                        app:neumorph_shapeType="basin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_sell"
+                            android:padding="4dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_recycle_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:includeFontPadding="false"
+            android:text="Categories"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:textColor="@color/blackDN"
+            android:textSize="@dimen/_18font_mdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_black"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="@string/we_will_buy_all_type_of_junk_listed_below"
+            android:textColor="@color/blackDN"
+            android:textSize="14sp" />
+
+              <!--                Electronics ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/electronicPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/apple">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/button_bg"
+                        android:backgroundTint="#90EDEDED"
+                        android:fontFamily="@font/baloo"
+                        android:paddingHorizontal="10dp"
+                        android:text="Electronics"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:background="@drawable/button_bg"
+                        android:backgroundTint="#90EDEDED"
+                        android:text="T.V, Refregertors, Cooler \nAireConditioners, Owens...etc"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/electronicsP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#B4EDEDED"
+                        android:fontFamily="@font/baloo"
+                        android:text="Tap for Prices"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-20dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:elevation="3dp"
+                android:padding="20dp"
+                android:src="@drawable/fridge" />
+
+        </RelativeLayout>
+
+        <!--                BOOKS ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_books"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@color/background"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/newspaperPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/newspaper_bundle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/baloo"
+                        android:paddingHorizontal="10dp"
+                        android:text="Old Books"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:text="Newspaper, Books \nCarton Boxes ,..etc"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/Rs"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_alignStart="@+id/boo"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/boo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/baloo"
+                        android:paddingHorizontal="10dp"
+                        android:text="10/kg"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-10dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="20dp"
+                android:elevation="3dp"
+                android:src="@drawable/books"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+        <!--               PLASTIC ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/plasticPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/pipe">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="Plastic"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:text="Plastic chair-Table , \nToys , pipes...etc"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/plastics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/baloo"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Rs. 20/kg"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="180dp"
+                        android:src="@drawable/chair" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!--                Steel ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/steelPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/pot_pan">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/baloo"
+                        android:paddingHorizontal="10dp"
+                        android:text="Steel"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:text="Steel - Pots, Frames...etc"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/steels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/baloo"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Rs.35/kg"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-10dp"
+                android:elevation="3dp"
+                android:src="@drawable/pot_mug" />
+
+        </RelativeLayout>
+
+        <!--                IRON ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/ironPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/iron_rods">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Junk Iron"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="60dp"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:text="Iron chair-Table , Almira , Doors \nand Windows , pipes...etc"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/irons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:fontFamily="@font/baloo"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:text="Rs. 22/kg"
+                        android:textColor="@color/white"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!--               ALLOYS ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/alloys_prices"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/alloys">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/baloo"
+                        android:text="Alloys"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:layout_marginStart="25dp"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:text="Copper, Brass, Aluminium...etc"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/alloys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/baloo"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Tap for Prices"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-25dp"
+                android:elevation="3dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:padding="15dp"
+                android:src="@drawable/alloy" />
+        </RelativeLayout>
+
+        <!--                MOTOR BIKE ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/motorbike">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/baloo"
+                        android:text="Old Bike"
+                        android:textColor="@color/blackDN"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/brawler"
+                        android:includeFontPadding="false"
+                        android:text="MotorBike, Scooters...etc"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/bikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/baloo"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Rs. 1500-2100/Bike"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-35dp"
+                android:padding="15dp"
+                android:elevation="3dp"
+                android:src="@drawable/scoooter" />
+
+        </RelativeLayout>
+
+        <!--                MOTOR Car ;-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/background"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/old_car">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/baloo"
+                        android:text="Old Car"
+                        android:textColor="@color/blackDN"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/cars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_corners"
+                        android:backgroundTint="#27000000"
+                        android:fontFamily="@font/baloo"
+                        android:includeFontPadding="false"
+                        android:layout_marginBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Rs. 28/Kg"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!-- <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-70dp"
+            android:elevation="3dp"
+            android:padding="15dp"
+            android:src="@drawable/old_car" />-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/car">
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selling Options"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:background="@color/black"
+                android:backgroundTint="@color/black">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/by_calling"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="40dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/banner_background"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/online"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="40dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/whiteDN">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/bungee"
+                android:includeFontPadding="false"
+                android:text="Exiciting Offers !!!"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16font_mdp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/bungee"
+                android:includeFontPadding="false"
+                android:text="We Offer highest Possible Rate"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_14font_mdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/bungee"
+                android:includeFontPadding="false"
+                android:text="For those People"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_14font_mdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/bungee"
+                android:includeFontPadding="false"
+                android:text="Who have 100 KG+ material"
+                android:textAlignment="center"
+                android:textColor="@color/purple_700"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_14font_mdp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="800dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="80dp"
+                    android:src="@drawable/covid" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/callUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_phone_24"
+        android:tint="@color/black"
+        style="@style/Widget.Design.FloatingActionButton"
+        android:elevation="5dp"
+        app:fabSize="normal"
+        android:visibility="gone"
+        android:layout_gravity="start"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="20dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sell"
+        android:tint="@color/black"
+        style="@style/Widget.Design.FloatingActionButton"
+        android:elevation="5dp"
+        app:fabSize="normal"
+        android:visibility="gone"
+        android:layout_gravity="end"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        android:transitionName="transition_sell"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

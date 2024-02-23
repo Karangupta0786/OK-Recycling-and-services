@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:padding="10dp"
+    android:transitionName="transition_info"
+    tools:context=".FragmentsRetailerDashbord.RetailerProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/oknew"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/corner_top"
+            android:backgroundTint="#FF2196F3">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                app:cardElevation="@dimen/_6sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:layout_gravity="center"
+                    android:background="@color/white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Recycled Material Till Now!"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="5dp"/>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/recycle"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recycled"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/recycled_kg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 Kg"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/background_theme"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:constraint_referenced_ids="trees,clean,energy,oil"
+                    app:flow_horizontalGap="@dimen/_3sdp"
+                    app:flow_maxElementsWrap="2"
+                    app:flow_verticalGap="@dimen/_3sdp"
+                    app:flow_wrapMode="aligned"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/signup_btn"
+                    tools:ignore="NotSibling" />
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/trees"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/neumorphismCard">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/tree"
+                            android:tint="@color/blackDN"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trees Saved"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tree_saved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.54 Trees"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/clean"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeAppearance="@style/neumorphismCard">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/water"
+                            android:tint="@color/blackDN"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Water Saved"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/water_saved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="224 Gallons"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/energy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/neumorphismCard"
+                    tools:ignore="MissingConstraints">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/energy"
+                            android:tint="@color/blackDN"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Energy Saved"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/energy_saved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="128 Kilowatts"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/oil"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_5sdp"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/neumorphismCard"
+                    tools:ignore="MissingConstraints">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_32sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:src="@drawable/oil"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Oil Saved"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/oil_saved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12.16 Gallons"
+                            android:textColor="@color/blackDN"
+                            android:textSize="@dimen/_12sdp"/>
+
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/login_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg"
+                    app:backgroundTint="#fff"
+                    android:onClick="callLoginScreen"
+                    android:text="Profile Gallery"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:transitionName="transition_login"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signup_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg"
+                    app:backgroundTint="#fff"
+                    android:layout_marginTop="10dp"
+                    android:onClick="callSignUpScreen"
+                    android:text="signup"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:id="@+id/how"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="#00000000"
+                    android:text="How we work ?"
+                    android:textColor="@color/black"
+                    android:transitionName="transition_signup"  />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/product_images"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stock"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/viewpager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/dot_selector"
+        app:tabIndicatorHeight="0dp"
+        app:tabRippleColor="@null"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_images"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Product Title"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewpager_indicator"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Condition : "
+            android:textSize="14sp"
+            android:textColor="@color/darkBlue"/>
+
+        <TextView
+            android:id="@+id/condition_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/blueSky"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Rs.200"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MRP"
+            android:textSize="14sp"
+            android:layout_marginLeft="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="800"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="#858383"
+            android:layout_marginLeft="-56dp"
+            android:layout_marginTop="16dp"
+            />
+
+    </LinearLayout>
+
+            </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

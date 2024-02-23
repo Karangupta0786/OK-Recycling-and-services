@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:transitionName="transition_signup"
+    tools:context=".HowWeWork">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We Work"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/baloo"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Without any mess"
+        android:textColor="@color/black"
+        android:includeFontPadding="false"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/bungee"
+        android:textSize="26sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="1. You book order First"
+        android:drawableEnd="@drawable/ic_sell"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="2. We will call you in 10 minutes"
+        android:drawableEnd="@drawable/ic_baseline_phone_24"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="3. We will come to your place at your own time"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="4. We will buy your junk at reasonable price"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Hassel free Instant Cash"
+        android:drawableEnd="@drawable/ic_money_24"
+        android:drawableTint="#489E4C"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/baloo"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bungee"
+        android:includeFontPadding="false"
+        android:text="Exiciting Offers !!!"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="12dp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bungee"
+        android:includeFontPadding="false"
+        android:text="We Offer highest Possible Rate"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bungee"
+        android:includeFontPadding="false"
+        android:text="For those People"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bungee"
+        android:includeFontPadding="false"
+        android:text="Who have 100 KG+ material"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bungee"
+        android:includeFontPadding="false"
+        android:text="Call Us For More Information"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+</LinearLayout>

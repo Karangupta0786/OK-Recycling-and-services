@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/menu_icon"/>
+
+      <!--  <item
+            android:id="@+id/nav_search"
+            android:title="Search"
+            android:icon="@drawable/search_icon"/>-->
+
+        <item
+            android:id="@+id/nav_all_categories"
+            android:title="Categories"
+            android:icon="@drawable/category_icon"/>
+<!--
+        <item
+            android:id="@+id/nav_theme"
+            android:title="Theme"
+            android:icon="@drawable/ic_theme"/>-->
+
+    </group>
+
+    <item android:title="Kindly share your Feedback">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_email"
+                    android:title="Email"
+                    android:icon="@drawable/ic_baseline_email_24"/>
+
+                <item
+                    android:id="@+id/nav_insta"
+                    android:title="Instagram"
+                    android:icon="@drawable/send_24"/>
+
+                <item
+                    android:id="@+id/nav_yt"
+                    android:title="YouTube"
+                    android:icon="@drawable/videocam_24"/>
+
+            </group>
+
+        </menu>
+
+    </item>
+
+    <item android:title="FAQ's">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_location"
+                    android:title="Service Locations"
+                    android:icon="@drawable/not_listed_location_24"/>
+
+                <item
+                    android:id="@+id/nav_terms"
+                    android:title="@string/tnc"
+                    android:icon="@drawable/terms_alt_24"/>
+
+                <item
+                    android:id="@+id/nav_shop"
+                    android:title="Shops"
+                    android:icon="@drawable/logout_icon"/>
+
+            </group>
+
+
+        </menu>
+
+    </item>
+
+    <item android:title="Share">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/nav_share"
+                    android:title="Share"
+                    android:icon="@drawable/share_24"/>
+
+                <item
+                    android:id="@+id/nav_rate_us"
+                    android:title="Rate Us"
+                    android:icon="@drawable/star_rate_24"/>
+
+            </group>
+
+
+        </menu>
+
+    </item>
+
+</menu>

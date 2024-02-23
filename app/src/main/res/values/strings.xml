@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">OK</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="freeLocatons">Currently we provide our FREE service around these areas :</string>
+    <string name="paidLocatons">Beyond these areas we will charge Service / Convenience Fee : 49 Rps</string>
+    <string name="gyanLocatons">If you have any quarry, Then please CAll Us.</string>
+    <string name="hiddenTnC">We don\'t have any hidden charges</string>
+    <string name="privacypolicy">Our <u>Privacy Policy</u>.</string>
+
+
+    <string name="new_user_creat_account">new user? create account</string>
+
+
+    <string name="tnC">Please read this User Agreement (Agreement) carefully in order to understand your rights and
+                        obligations before you offer to sell your Junk on OK-Junk Store. When selling an Junk on OK-Junk
+                        Store, you must agree to the terms and conditions outlined below. OK-Junk Store reserves the right to
+                        amend, cancel, or alter the terms of this Agreement at our sole discretion by posting an amended
+                        Agreement on OK-Junk Store . Except as stated below, the amended User Agreement will be effective
+                        immediately after it is posted.\n
+
+                        To sell an Junk, you will provide your contact name, principal address, and contact details, Our use of
+                        that information is governed by our Privacy Policy.\n
+
+                        When you submit a sell order, you agree to these policies, terms and conditions.\n
+
+                        Your use of OK-Junk Store may be terminated or suspended if you do not comply with this Agreement
+                        or our policies and procedures, or for any other reason we determine necessary, in our sole discretion,
+                        to protect the app and its users.\n</string>
+    <string name="atS">It is very important that you are convinced and happy that you want to deal with OK-Junk Store and
+you are well within your rights to do so.\n
+You represent and warranty that you are not a minor and that you can form legally binding contracts
+under applicable law. Whether you are an individual or business, you also represent and warranty that
+you rightfully own or are legally authorized to sell any type of Junk you enter into the OK-Junk Store
+system. If you do not qualify, please do not attempt to use OK-Junk Store.\n
+If you are minor and have used OK-Junk Store, your parents or guardians cannot hold us liable for any
+claims that may result from your breach of this warranty
+By selling on our app, you warrant that you are a resident of India and accessing OK-Junk Store from
+India
+In all cases, OK-Junk Store maintains the rights to review, edit, or cancel the submission in part or in
+whole.\n
+By submitting an order through our app you warrant that the JUNK comply with these terms.\n
+Lost or Stolen Mobile Phones and Free and Clear Electronic Serial Number (ESN)
+Selling an Junk or Electronic device which you do not own may amount to a criminal offence.\n
+OK-Junk Store only buys Junk that have a valid and verifiable ESN or IMEI number. This means that the
+sticker under the battery that displays this number must be clearly visible.\n</string>
+    <string name="sJunk">Lost or Stolen Junk Free and Clear Electronic Serial Number (ESN)
+Selling a Junk or Electronic Item which you do not own may amount to a criminal offence.\n
+OK-Junk Store only buys Unusable junk/Electronic Junk that have a valid and verifiable ESN or IMEI
+number. This means that the sticker displays this number must be clearly visible.\n
+It is your responsibility to ensure OK-Junk Store does not receive Electronic Junk with ESN numbers
+that are associated with an account, have been reported lost or stolen. Every Junk with an ESN is
+verified before resale by OK-Junk Store. If OK-Junk Store determines during verification that the ESN is
+not free and clear, then OK-Junk Store will not buy the Junk.\n
+If we have paid you for a Junk that you have sold to us and subsequently there is an issue regarding
+the ownership of the Junk, you will immediately reimburse us. If OK-Junk Store is ever penalized or
+fined or suffers any loss or damages because a Junk you offered to sell was not yours to sell, then you
+will reimburse OK-Junk Store for all costs incurred, including legal fees.\n
+If at any point of time there are issues about ownership of a Junk sold to us, you agree to co-operate
+with us fully with a view to resolving the issues and liable for any issues arising.\n
+We may disclose seller details to the Police or other authorised bodies (such as, but not limited to,
+network operators and insurance companies) for the purpose of investigating or preventing a crime.\n
+By entering into this contract you agree to us supplying data to the police or other authorised bodies
+for the purpose of the prevention and detection of cerime, arrest and prosecution of offenders or for
+the recovery of stolen property.\n</string>
+    <string name="evidence">OK-Junk Store may report to the proper authorities and, if required, surrender to the proper authorities
+any Junk that OK-Junk Store receives that has stored on it illegal data or images.</string>
+    <string name="payment">After you correctly mention the details of your Junk, we provide a quote after seeing the Junk. Only if
+you are happy with the price quoted, confirm your sell order on OK-Junk Store. You are free to chose
+the payment method (cash/online).\n
+Bank Transfer payments can only be made into the account that that has been provide by you. It will
+not be possible to recall or reissue bank transfer payment once they have been made. So request you
+to provide bank details correctly.\n
+
+The payment made through bank transfer/online or cash by OK-Junk Store is the full and final
+payment for the Junk and completes our transaction. OK-Junk Store owns the Junk in full after
+payment has been sent. OK-Junk Store is not a collateral loan broker and will not hold your Junk for
+you to buy back.\n
+Once the payment has been completed either online or through our authorised personnel or service
+partner, the said transaction cannot be reversed. We will not be in a position to return the device due
+to any reasons/issues.\n</string>
+    <string name="illegal">OK-Junk Store may report to the proper authorities and, if required, surrender to the proper authorities
+any type of junk that OK-Junk Store receives that has connection with the illegal activities or has
+stored on it illegal data or images.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="we_will_buy_all_type_of_junk_listed_below">We handle all types of dry waste listed \nbelow</string>
+    <string name="menu_header_title">Junk Store</string>
+    <string name="menu_header_text">Anything you want to sell, \neverything we buy here</string>
+    <string name="online">- Online</string>
+    <string name="by_calling">- By Calling</string>
+    <string name="if_you_can_t_find">If your essential item is not on the list,then you can call and ask</string>
+    <string name="tnc"><![CDATA[Terms & conditions]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="Rs">\u20B9</string>
+
+</resources>

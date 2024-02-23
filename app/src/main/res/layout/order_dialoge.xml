@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#00000000"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/corner_top"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:gravity="center_horizontal"
+                android:text="Order Successfully placed !!"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13font_mdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/brawler"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:text="We will contacting you with in 60 sec!"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12font_mdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="22dp">
+
+            <TextView
+                android:id="@+id/our"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_top"
+                android:backgroundTint="@color/lightGrey"
+                android:fontFamily="@font/muli_black"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                android:text="Our Customers !!"
+                android:layout_marginEnd="12dp"
+                android:textSize="@dimen/_14font_mdp" />
+
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_top"
+            android:backgroundTint="#F44336"
+            android:fontFamily="@font/muli_black"
+            android:layout_marginStart="16dp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="15dp"
+            android:elevation="8dp"
+            android:text="Close"
+            android:textColor="@color/lightWhite"
+            android:textSize="@dimen/_14font_mdp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="190dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-30dp"
+            android:src="@drawable/verified"
+            app:tint="@color/black" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

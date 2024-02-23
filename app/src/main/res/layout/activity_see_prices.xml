@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_theme"
+    tools:context=".SeePrices">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:includeFontPadding="false"
+            android:text="Categories"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:textColor="@color/blackDN"
+            android:textSize="@dimen/_18font_mdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_black"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="@string/we_will_buy_all_type_of_junk_listed_below"
+            android:textColor="@color/blackDN"
+            android:textSize="14sp" />
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_books"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/newspaper"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_recycle_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Paper/Books/Carton"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_books"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/books"/>
+            <TextView
+                android:id="@+id/books"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="10/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Paper/Books/Carton 50Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_books"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/books50"/>
+            <TextView
+                android:id="@+id/books50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="12/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Paper/Books/Carton 100Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_books"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/books10"/>
+            <TextView
+                android:id="@+id/books10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="14/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_tv"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Television"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv"/>
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="70/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Television x2"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv2"/>
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="80/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Television x5"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv5"/>
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="90/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_fan"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/fan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Fan"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fan"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fan"/>
+            <TextView
+                android:id="@+id/fan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="70/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Fan x2"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fan"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fan2"/>
+            <TextView
+                android:id="@+id/fan2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="80/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Fan x5"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fan"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fan5"/>
+            <TextView
+                android:id="@+id/fan5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="90/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_wm"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/washin_machine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Washing Machine"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_wm"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/wm"/>
+            <TextView
+                android:id="@+id/wm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="500/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Washing Machine x2"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_wm"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/wm2"/>
+            <TextView
+                android:id="@+id/wm2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="700/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Washing Machine x5"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_wm"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/wm5"/>
+            <TextView
+                android:id="@+id/wm5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="800/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/left_recy_fridge"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/fridge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Refrigerator"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fridge"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fridge"/>
+            <TextView
+                android:id="@+id/fridge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="800/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Refrigerator x2"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fridge"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fridge2"/>
+            <TextView
+                android:id="@+id/fridge2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="900/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Refrigerator x5"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_fridge"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fridge5"/>
+            <TextView
+                android:id="@+id/fridge5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="1100/Pc."
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/left_recy_ac"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ac"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="A.C. 0.5/1 Ton"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_ac"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ac_1_ton"/>
+            <TextView
+                android:id="@+id/ac_1_ton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="1800/Pc"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="A.C. 1.5/2 Ton"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_ac"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ac_2_ton"/>
+            <TextView
+                android:id="@+id/ac_2_ton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="3500/Pc"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="A.C. 1.5/2 Ton x2"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_ac"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ac_2_ton_2"/>
+            <TextView
+                android:id="@+id/ac_2_ton_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="3800/Pc"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/left_recy_plastics"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/chair"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Plastic"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_plastics"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/plastic"/>
+            <TextView
+                android:id="@+id/plastic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="15/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Plastic 50 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_plastics"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/plastic50"/>
+            <TextView
+                android:id="@+id/plastic50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="16/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Plastic 100 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_plastics"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/plastic10"/>
+            <TextView
+                android:id="@+id/plastic10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="18/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/left_recy_steel"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/pot_mug"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Steel"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_steel"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/steel_d"/>
+            <TextView
+                android:id="@+id/steel_d"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="40/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Steel 50 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_steel"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/steel_d50"/>
+            <TextView
+                android:id="@+id/steel_d50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="45/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Steel 100 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_steel"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/steel_d10"/>
+            <TextView
+                android:id="@+id/steel_d10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="48/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_iron"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/nut"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Iron"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_iron"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iron_d"/>
+            <TextView
+                android:id="@+id/iron_d"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="25/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Iron 50 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_iron"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iron_d50"/>
+            <TextView
+                android:id="@+id/iron_d50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="27/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Iron 100 Kg+"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_iron"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iron_d10"/>
+            <TextView
+                android:id="@+id/iron_d10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="30/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shadowElevation="@dimen/_5sdp"
+        android:clickable="true"
+        app:neumorph_shapeAppearance="@style/neumorphismCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/left_recy_cu"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/copper"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/blackDN" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="Copper"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_cu"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cu_d"/>
+            <TextView
+                android:id="@+id/cu_d"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="500/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="Aluminium"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_cu"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/al"/>
+            <TextView
+                android:id="@+id/al"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="20dp"
+                android:text="90/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="Brass(पीतल)"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/left_recy_cu"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/Rs"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/brass"/>
+            <TextView
+                android:id="@+id/brass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="40dp"
+                android:text="280/Kg"
+                android:textColor="@color/blackDN"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+</LinearLayout>
+</ScrollView>
