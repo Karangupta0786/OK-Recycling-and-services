@@ -47,9 +47,10 @@
         android:id="@+id/imageView"
         android:layout_width="@dimen/_120mdp"
         android:layout_height="@dimen/_120mdp"
-        android:layout_marginTop="24dp"
         android:src="@drawable/oknew"
         android:transitionName="logo_image"
+        app:layout_constraintVertical_bias=".08"
+        app:layout_constraintBottom_toBottomOf="@id/truck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,10 +59,10 @@
         android:id="@+id/truck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/splash"
+        android:src="@drawable/splash_screen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 

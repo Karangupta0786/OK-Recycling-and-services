@@ -18,7 +18,7 @@ import com.okjunkstore.beta.dashboard.DashboardActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 3000;
+    private static int SPLASH_SCREEN = 2000;
 
     //variables
     Animation topanim,bottomanim;
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 pairs[0] = new Pair<View,String>(ok,"logo_image");
 //                pairs[1] = new Pair<View,String>(textView,"logo_name");
                 ActivityOptions optons = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
-                startActivity(intent,optons.toBundle());
+//                startActivity(intent,optons.toBundle());
+                startActivity(intent);
                 finish();
             }
         },SPLASH_SCREEN);
