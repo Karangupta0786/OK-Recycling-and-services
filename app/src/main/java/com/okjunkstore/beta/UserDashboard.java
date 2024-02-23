@@ -48,6 +48,7 @@ import com.okjunkstore.beta.Helperclass.HomeAdapter.SlotAdapter;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.slotHelperClass;
 import com.okjunkstore.beta.NavigationDrawer.TermsAndConditions;
 import com.okjunkstore.beta.api.ApiUtilities;
+import com.okjunkstore.beta.dashboard.DashboardActivity;
 import com.okjunkstore.beta.model.PushNotification;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -534,7 +535,7 @@ public class UserDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(UserDashboard.this, RetailerDashboard.class));
+                startActivity(new Intent(UserDashboard.this, DashboardActivity.class));
                 finish();
             }
         });

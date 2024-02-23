@@ -1,4 +1,4 @@
-package com.okjunkstore.beta;
+package com.okjunkstore.beta.dashboard;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,8 +31,10 @@ import com.okjunkstore.beta.NavigationDrawer.ServiceLocations;
 import com.okjunkstore.beta.NavigationDrawer.TermsAndConditions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.okjunkstore.beta.R;
+import com.okjunkstore.beta.SeePrices;
 
-public class RetailerDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     TextView title;
     ChipNavigationBar chipNavigationBar;
@@ -55,9 +57,9 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
             case REQUEST_CALL: {
                 //if request is cancelled, th array is empty
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(RetailerDashboard.this, "Permission is Granted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DashboardActivity.this, "Permission is Granted", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(RetailerDashboard.this, "Permission not Granted, We need to disable the Functionality", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DashboardActivity.this, "Permission not Granted, We need to disable the Functionality", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
@@ -69,7 +71,7 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_retailer_dashboard);
+        setContentView(R.layout.activity_dashboard);
 
         FirebaseMessaging.getInstance().subscribeToTopic("buy");
 
@@ -92,27 +94,27 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
     }//OnCreat Method
 
     private void permission() {
-        if (ContextCompat.checkSelfPermission(RetailerDashboard.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RetailerDashboard.this,Manifest.permission.CALL_PHONE)){
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(RetailerDashboard.this);
+        if (ContextCompat.checkSelfPermission(DashboardActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+            if (ActivityCompat.shouldShowRequestPermissionRationale(DashboardActivity.this,Manifest.permission.CALL_PHONE)){
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(DashboardActivity.this);
                 builder.setTitle("Request Permission");
                 builder.setMessage("You should enable this permission to CALL_PHONE so we can to that and that...");
                 builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        ActivityCompat.requestPermissions(RetailerDashboard.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+                        ActivityCompat.requestPermissions(DashboardActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
                     }
                 });
                 builder.setPositiveButton("Grant Permission", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        ActivityCompat.requestPermissions(RetailerDashboard.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+                        ActivityCompat.requestPermissions(DashboardActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
                     }
                 });
                 builder.show();
 
             }else{
-                ActivityCompat.requestPermissions(RetailerDashboard.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+                ActivityCompat.requestPermissions(DashboardActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
 
             }
         }else {
@@ -177,7 +179,7 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
                 startActivity(inte);
                 break;
             case R.id.nav_all_categories:
-                Intent categoriesIntent = new Intent(getApplicationContext(),SeePrices.class);
+                Intent categoriesIntent = new Intent(getApplicationContext(), SeePrices.class);
                 startActivity(categoriesIntent);
                 break;
             case R.id.nav_email:
@@ -194,7 +196,7 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
                 gotoUrl("https://play.google.com/store/apps/details?id=com.okjunkstore.beta");
                 break;
             case R.id.nav_shop:
-                Toast.makeText(RetailerDashboard.this, "Currently we don't have any offline shops", Toast.LENGTH_LONG).show();
+                Toast.makeText(DashboardActivity.this, "Currently we don't have any offline shops", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_share:
                 Intent share = new Intent(Intent.ACTION_SEND);
@@ -224,7 +226,7 @@ public class RetailerDashboard extends AppCompatActivity implements NavigationVi
                 backToast.cancel();
                 return;
             } else {
-            backToast = Toast.makeText(RetailerDashboard.this, "Press back again to exit", Toast.LENGTH_SHORT);
+            backToast = Toast.makeText(DashboardActivity.this, "Press back again to exit", Toast.LENGTH_SHORT);
             backToast.show();
         }
         /* else{

@@ -29,7 +29,7 @@
             android:name=".NavigationDrawer.PrivacyPolicy"
             android:exported="false"/>
         <activity
-            android:name=".RetailerDashboard"
+            android:name=".dashboard.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".UserProfile"

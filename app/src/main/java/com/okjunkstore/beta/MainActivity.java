@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.okjunkstore.beta.dashboard.DashboardActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, RetailerDashboard.class);
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
 
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View,String>(ok,"logo_image");
