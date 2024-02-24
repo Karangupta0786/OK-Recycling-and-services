@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -75,7 +76,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserDashboard extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 //// ////Schedule Timing
     TextView dateSelect, date;
     DatePickerDialog.OnDateSetListener setListener;
@@ -129,8 +130,8 @@ public class UserDashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_user_dashboard);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_order);
 
 //// ////Weight radio btn
         atleast = findViewById(R.id.atleast);
@@ -193,7 +194,7 @@ public class UserDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        UserDashboard.this, new DatePickerDialog.OnDateSetListener() {
+                        OrderActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         month = month + 1;
@@ -205,8 +206,8 @@ public class UserDashboard extends AppCompatActivity {
             }
         });
 
-        dialog = new Dialog(UserDashboard.this);
-        progressDialog = new ProgressDialog(UserDashboard.this);
+        dialog = new Dialog(OrderActivity.this);
+        progressDialog = new ProgressDialog(OrderActivity.this);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Notice");
         storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -302,7 +303,7 @@ public class UserDashboard extends AppCompatActivity {
         terms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserDashboard.this, TermsAndConditions.class));
+                startActivity(new Intent(OrderActivity.this, TermsAndConditions.class));
             }
         });
 
@@ -312,9 +313,9 @@ public class UserDashboard extends AppCompatActivity {
                 if (!validateOwner() | !validatePhone() | !validateAddress()) {
                     return;
                 }if (categories.equals("Select Locality")){
-                    Toast.makeText(UserDashboard.this, "Please Select Locality", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this, "Please Select Locality", Toast.LENGTH_SHORT).show();
                 }if (!agree.isChecked()){
-                    Toast.makeText(UserDashboard.this, "Please check the box", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this, "Please check the box", Toast.LENGTH_SHORT).show();
                 }
                 else if (bitmap == null){
                     uploadData();
@@ -340,10 +341,10 @@ public class UserDashboard extends AppCompatActivity {
 //         });
 
         btn.setOnClickListener(view -> {
-            if (ActivityCompat.checkSelfPermission(UserDashboard.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(OrderActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 showLocation();
             } else
-                ActivityCompat.requestPermissions(UserDashboard.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+                ActivityCompat.requestPermissions(OrderActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
         });
     }
 
@@ -363,7 +364,7 @@ public class UserDashboard extends AppCompatActivity {
             public void onComplete(@NonNull Task<Location> task) {
                 Location location = task.getResult();
                 if (location!= null){
-                    Geocoder geocoder = new Geocoder(UserDashboard.this, Locale.getDefault());
+                    Geocoder geocoder = new Geocoder(OrderActivity.this, Locale.getDefault());
                     try {
                         List<Address> addressList = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
                         address.getEditText().setText(addressList.get(0).getAddressLine(0));
@@ -372,7 +373,7 @@ public class UserDashboard extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(UserDashboard.this, "Location Null Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this, "Location Null Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -383,13 +384,13 @@ public class UserDashboard extends AppCompatActivity {
             @Override
             public void onResponse(Call<PushNotification> call, Response<PushNotification> response) {
                 if (response.isSuccessful())
-                    Toast.makeText(UserDashboard.this, "success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this, "success", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(UserDashboard.this, "error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this, "error", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onFailure(Call<PushNotification> call, Throwable t) {
-                Toast.makeText(UserDashboard.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(OrderActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -454,7 +455,7 @@ public class UserDashboard extends AppCompatActivity {
          final StorageReference filePath;
          filePath = storageReference.child("Notice").child(finalImg+"jpg");
          final UploadTask uploadTask = filePath.putBytes(finalImg);
-         uploadTask.addOnCompleteListener(UserDashboard.this,new OnCompleteListener<UploadTask.TaskSnapshot>() {
+         uploadTask.addOnCompleteListener(OrderActivity.this,new OnCompleteListener<UploadTask.TaskSnapshot>() {
              @Override
              public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                  if (task.isSuccessful()){
@@ -472,7 +473,7 @@ public class UserDashboard extends AppCompatActivity {
                      });
                  }else {
                      progressDialog.dismiss();
-                     Toast.makeText(UserDashboard.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(OrderActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
                  }
              }
          });
@@ -513,13 +514,13 @@ public class UserDashboard extends AppCompatActivity {
              @Override
              public void onSuccess(Void unused) {
                  progressDialog.dismiss();
-                 Toast.makeText(UserDashboard.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(OrderActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
                  openOrderDialog();
              }
          }).addOnFailureListener(new OnFailureListener() {
              @Override
              public void onFailure(@NonNull Exception e) {
-                 Toast.makeText(UserDashboard.this, "Failed", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(OrderActivity.this, "Failed", Toast.LENGTH_SHORT).show();
              }
          });
      }
@@ -535,7 +536,7 @@ public class UserDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(UserDashboard.this, DashboardActivity.class));
+                startActivity(new Intent(OrderActivity.this, DashboardActivity.class));
                 finish();
             }
         });
@@ -543,7 +544,7 @@ public class UserDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(UserDashboard.this,UserProfile.class));
+                startActivity(new Intent(OrderActivity.this,UserProfile.class));
                 finish();
             }
         });

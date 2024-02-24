@@ -34,7 +34,7 @@
         <activity
             android:name=".UserProfile"
             android:exported="false"/>
-        <activity android:name=".UserDashboard"
+        <activity android:name=".OrderActivity"
             android:exported="false"/>
         <activity android:name=".NavigationDrawer.ServiceLocations"
             android:exported="false"/>

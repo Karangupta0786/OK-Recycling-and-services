@@ -8,7 +8,7 @@
     android:background="#082c6c"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".UserDashboard"
+    tools:context=".OrderActivity"
     android:transitionName="transition_sell">
 
     <LinearLayout
