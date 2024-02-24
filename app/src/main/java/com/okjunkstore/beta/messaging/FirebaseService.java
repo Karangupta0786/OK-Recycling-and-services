@@ -16,7 +16,7 @@ import androidx.core.app.NotificationCompat;
 import com.okjunkstore.beta.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.okjunkstore.beta.UserDashboard;
+import com.okjunkstore.beta.OrderActivity;
 
 import java.util.Random;
 
@@ -27,7 +27,7 @@ public class FirebaseService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        Intent intent = new Intent(this, UserDashboard.class);
+        Intent intent = new Intent(this, OrderActivity.class);
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         int notificationId = new Random().nextInt();
 

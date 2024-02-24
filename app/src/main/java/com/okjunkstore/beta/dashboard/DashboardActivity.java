@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -50,22 +51,22 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     static final int REQUEST_CALL = 1;
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case REQUEST_CALL: {
-                //if request is cancelled, th array is empty
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(DashboardActivity.this, "Permission is Granted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(DashboardActivity.this, "Permission not Granted, We need to disable the Functionality", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        switch (requestCode) {
+//            case REQUEST_CALL: {
+//                //if request is cancelled, th array is empty
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(DashboardActivity.this, "Permission is Granted", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(DashboardActivity.this, "Permission not Granted, We need to disable the Functionality", Toast.LENGTH_SHORT).show();
+//                }
+//                return;
+//            }
+//
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         setContentView(R.layout.activity_dashboard);
 
         FirebaseMessaging.getInstance().subscribeToTopic("buy");
+
+        // Assuming 'ok' is the reference to your ImageView in the dashboard activity layout
+        LinearLayout ok = findViewById(R.id.content);
+
 
         //Menu Hooks
         drawerLayout = findViewById(R.id.drawer_layuot);
@@ -89,7 +94,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         navigationDrawer();
 
-        permission();
+//        permission();
 
     }//OnCreat Method
 
@@ -265,7 +270,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                     case R.id.bottom_nav_buy:
                         fragment = new BuyFragment();
                         title.setText("OK Junk Store");
-                        permission();
+//                        permission();
                         break;
                     case R.id.bottom_nav_profile:
                         fragment = new ProfileFragment();

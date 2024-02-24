@@ -29,7 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.okjunkstore.beta.R;
-import com.okjunkstore.beta.UserDashboard;
+import com.okjunkstore.beta.OrderActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import soup.neumorphism.NeumorphCardView;
@@ -75,7 +75,7 @@ public class SellFragment extends Fragment {
         sellActivity = v.findViewById(R.id.post);
         sellActivity.setOnClickListener(view1 -> {
 //            Toast.makeText(getContext(), "Please Do not apply Dark Theme", Toast.LENGTH_LONG).show();
-            Intent intent =new Intent(getActivity() , UserDashboard.class);
+            Intent intent =new Intent(getActivity() , OrderActivity.class);
             Pair[] pairs = new Pair[1];
             pairs[0] = new Pair<View, String>(sellActivity, "transition_sell");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) getContext(), pairs);
@@ -169,7 +169,7 @@ public class SellFragment extends Fragment {
         cardSell = v.findViewById(R.id.card_sell_now);
         cardSell.setOnClickListener(view1 -> {
 //            Toast.makeText(getContext(), "Please Do not apply Dark Theme", Toast.LENGTH_LONG).show();
-            Intent intent =new Intent(getActivity() , UserDashboard.class);
+            Intent intent =new Intent(getActivity() , OrderActivity.class);
             Pair[] pairs = new Pair[1];
             pairs[0] = new Pair<View, String>(cardSell, "transition_sell");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) getContext(), pairs);

@@ -37,7 +37,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.okjunkstore.beta.UserDashboard;
+import com.okjunkstore.beta.OrderActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,23 +50,6 @@ public class DashboardFragment extends Fragment {
     RelativeLayout internetNotLayout;
     TextView retry;
 /////////internet
-
-    static final int REQUEST_CALL = 1;
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case REQUEST_CALL:{
-                //if request is cancelled, th array is empty
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    Toast.makeText(getContext(), "Permission is Granted", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getContext(), "Permission not Granted, We need to disable the Functionality", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-
-        }
-    }
 
     FloatingActionButton fab;
     ScrollView scrollView;
@@ -141,7 +124,7 @@ public class DashboardFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(getActivity() , UserDashboard.class);
+                Intent intent =new Intent(getActivity() , OrderActivity.class);
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View, String>(fab, "transition_sell");
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) getContext(), pairs);

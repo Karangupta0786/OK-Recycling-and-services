@@ -25,7 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.okjunkstore.beta.R;
-import com.okjunkstore.beta.UserDashboard;
+import com.okjunkstore.beta.OrderActivity;
 import com.okjunkstore.beta.UserProfile;
 import com.google.android.material.button.MaterialButton;
 
@@ -132,7 +132,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                startActivity(new Intent(getContext(), UserDashboard.class));
+                startActivity(new Intent(getContext(), OrderActivity.class));
             }
         });
         dialog.show();
