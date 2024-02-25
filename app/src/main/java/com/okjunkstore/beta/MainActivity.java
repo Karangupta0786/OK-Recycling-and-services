@@ -18,11 +18,9 @@ import com.okjunkstore.beta.dashboard.DashboardActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 2000;
-
     //variables
-    Animation topanim,bottomanim;
-
+    int SPLASH_SCREEN = 2000;
+    Animation topAnim, bottomAnim;
     ImageView ok,truck;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -38,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         //Animations
-        topanim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
-        bottomanim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+        topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
         //Hooks
         ok = findViewById(R.id.imageView);
         truck = findViewById(R.id.truck);
 
-        ok.setAnimation(topanim);
-        truck.setAnimation(bottomanim);
+        ok.setAnimation(topAnim);
+        truck.setAnimation(bottomAnim);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -56,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View,String>(ok,"logo_image");
 //                pairs[1] = new Pair<View,String>(textView,"logo_name");
-                ActivityOptions optons = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
-//                startActivity(intent,optons.toBundle());
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
+//                startActivity(intent,options.toBundle());
                 startActivity(intent);
                 finish();
             }
-        },SPLASH_SCREEN);
+        }, SPLASH_SCREEN);
     }
 
 /*    @Override
