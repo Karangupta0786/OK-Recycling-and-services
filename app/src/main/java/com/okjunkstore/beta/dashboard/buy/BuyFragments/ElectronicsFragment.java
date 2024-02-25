@@ -1,4 +1,4 @@
-package com.okjunkstore.beta.BuyFragments;
+package com.okjunkstore.beta.dashboard.buy.BuyFragments;
 
 import android.os.Bundle;
 
