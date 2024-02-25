@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.okjunkstore.beta.BuyFragments.FragmentAdapter;
+import com.okjunkstore.beta.dashboard.buy.BuyFragments.FragmentAdapter;
 import com.okjunkstore.beta.R;
 import com.google.android.material.tabs.TabLayout;
 
