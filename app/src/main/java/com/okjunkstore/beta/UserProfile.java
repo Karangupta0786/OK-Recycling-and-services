@@ -19,7 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class UserProfile extends AppCompatActivity {
@@ -51,11 +55,12 @@ public class UserProfile extends AppCompatActivity {
         schoolNoData = findViewById(R.id.schoolNoData);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Notice");
-        
-        houseOwnerData();
+
+        list1 = new ArrayList<>();
         apartmentOwnerData();
         shopOwnerData();
         schoolOwnerData();
+        houseOwnerData();
 
        /* //Hooks
         yourname = findViewById(R.id.full_name_profile);
@@ -97,7 +102,7 @@ public class UserProfile extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list1 = new ArrayList<>();
+//                list1 = new ArrayList<>();
                 if (!snapshot.exists()){
                     houseNoData.setVisibility(View.VISIBLE);
                     houseOwners.setVisibility(View.GONE);
@@ -108,6 +113,23 @@ public class UserProfile extends AppCompatActivity {
                         ownerOrderData data = snapshot1.getValue(ownerOrderData.class);
                         list1.add(data);
                     }
+
+                    // Define the format of your dates
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
+
+                    // Sort using a custom comparator
+                    Collections.sort(list1, new Comparator<ownerOrderData>() {
+                        public int compare(ownerOrderData d1, ownerOrderData d2) {
+                            try {
+                                return sdf.parse(d1.getDate()).compareTo(sdf.parse(d2.getDate()));
+                            } catch (ParseException e) {
+                                throw new IllegalArgumentException("Invalid date format", e);
+                            }
+                        }
+                    });
+
+                    Collections.reverse(list1);
+
                     houseOwners.setHasFixedSize(true);
                     houseOwners.setLayoutManager(new LinearLayoutManager(UserProfile.this));
                     adapter = new OwnerOrderAdapter(list1,UserProfile.this);
@@ -135,7 +157,7 @@ public class UserProfile extends AppCompatActivity {
                     apartmentOwners.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot1 : snapshot.getChildren()){
                         ownerOrderData data = snapshot1.getValue(ownerOrderData.class);
-                        list2.add(data);
+                        list1.add(data);
                     }
                     apartmentOwners.setHasFixedSize(true);
                     apartmentOwners.setLayoutManager(new LinearLayoutManager(UserProfile.this));
@@ -164,7 +186,7 @@ public class UserProfile extends AppCompatActivity {
                     shopOwners.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot1 : snapshot.getChildren()){
                         ownerOrderData data = snapshot1.getValue(ownerOrderData.class);
-                        list3.add(data);
+                        list1.add(data);
                     }
                     shopOwners.setHasFixedSize(true);
                     shopOwners.setLayoutManager(new LinearLayoutManager(UserProfile.this));
@@ -193,7 +215,7 @@ public class UserProfile extends AppCompatActivity {
                     schoolOwners.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot1 : snapshot.getChildren()){
                         ownerOrderData data = snapshot1.getValue(ownerOrderData.class);
-                        list4.add(data);
+                        list1.add(data);
                     }
                     schoolOwners.setHasFixedSize(true);
                     schoolOwners.setLayoutManager(new LinearLayoutManager(UserProfile.this));

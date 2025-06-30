@@ -703,7 +703,7 @@
                     android:buttonTint="#f4d47c"
                     android:checked="true"
                     android:text="I agree, Terms and Condtions"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <ImageView
