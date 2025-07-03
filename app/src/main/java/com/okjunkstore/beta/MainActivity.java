@@ -6,6 +6,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_SCREEN);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy (policy);
+
     }
 
 /*    @Override

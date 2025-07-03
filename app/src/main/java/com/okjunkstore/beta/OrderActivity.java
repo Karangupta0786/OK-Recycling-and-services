@@ -1,5 +1,6 @@
 package com.okjunkstore.beta;
 
+import static com.okjunkstore.beta.api.RetrofitClient.retrofit1;
 import static com.okjunkstore.beta.model.Constants.TOPIC;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -39,17 +41,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.Api;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.chip.Chip;
+import com.google.gson.Gson;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.ownerOrderData;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.NotificationData;
 //import com.okjunkstore.beta.Helperclass.HomeAdapter.SlotAdapter;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.SlotAdapter;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.slotHelperClass;
 import com.okjunkstore.beta.NavigationDrawer.TermsAndConditions;
+import com.okjunkstore.beta.api.ApiInterface;
 import com.okjunkstore.beta.api.ApiUtilities;
 import com.okjunkstore.beta.dashboard.DashboardActivity;
+import com.okjunkstore.beta.model.FcmHttpV1Request;
 import com.okjunkstore.beta.model.PushNotification;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -69,9 +75,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -323,10 +331,11 @@ public class OrderActivity extends AppCompatActivity {
                     uploadImage();
                 }
                 String name = ownerName.getEditText().getText().toString();
-                String titletxt = "Thank You "+name;
-                String msgtxt = "We Received Your Order from your : " + categories;
-                PushNotification notification = new PushNotification(new NotificationData(titletxt,msgtxt),TOPIC);
-                sendNotification(notification);
+                String titleTxt = "Thank You "+name;
+                String bodyTxt = "We Received an Order from : " + categories;
+                PushNotification notification = new PushNotification(new NotificationData(titleTxt,bodyTxt),TOPIC);
+//                sendNotification(notification);
+                sendNotify(titleTxt, bodyTxt);
             }
         });
 //       addImageBtn.setOnClickListener(new View.OnClickListener() {
@@ -391,6 +400,45 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<PushNotification> call, Throwable t) {
                 Toast.makeText(OrderActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void sendNotify(String title, String body){
+        ApiInterface apiService = retrofit1.create(ApiInterface.class);
+
+// Prepare the message
+        FcmHttpV1Request.Notification notification = new FcmHttpV1Request.Notification();
+        notification.title = title;
+        notification.body = body;
+
+        FcmHttpV1Request.Message message = new FcmHttpV1Request.Message();
+        message.topic = "news";
+        message.notification = notification;
+        message.data = new HashMap<>();
+        message.data.put("story_id", "story_12345");
+
+
+        FcmHttpV1Request request = new FcmHttpV1Request(message);
+        Gson gson = new Gson();
+        Log.d("FCM-Payload", gson.toJson(request));
+
+// Call FCM API
+        apiService.sendNotificationNew(request).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    Log.d("FCM", "Notification Sent Successfully");
+                    Toast.makeText(OrderActivity.this, "Notification Sent Successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(OrderActivity.this, "Notification Error", Toast.LENGTH_SHORT).show();
+                    Log.e("FCM", "Error Code: " + response.code());
+                    Log.e("FCM", "Error Body: " + response.errorBody().toString());
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(OrderActivity.this, "Notification Error", Toast.LENGTH_SHORT).show();
+                Log.e("FCM", "Failed: " + t.getMessage());
             }
         });
     }
@@ -560,8 +608,8 @@ public class OrderActivity extends AppCompatActivity {
      @Override
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
          super.onActivityResult(requestCode, resultCode, data);
-             Uri uri = data.getData();
              try {
+                 Uri uri = data.getData();
                  bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
              } catch (IOException e) {
                  e.printStackTrace();
