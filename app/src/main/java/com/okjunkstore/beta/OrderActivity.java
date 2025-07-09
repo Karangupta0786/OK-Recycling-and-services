@@ -41,24 +41,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.chip.Chip;
 import com.google.gson.Gson;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.ownerOrderData;
-import com.okjunkstore.beta.Helperclass.HomeAdapter.NotificationData;
-//import com.okjunkstore.beta.Helperclass.HomeAdapter.SlotAdapter;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.SlotAdapter;
 import com.okjunkstore.beta.Helperclass.HomeAdapter.slotHelperClass;
 import com.okjunkstore.beta.NavigationDrawer.TermsAndConditions;
 import com.okjunkstore.beta.api.ApiInterface;
-import com.okjunkstore.beta.api.ApiUtilities;
 import com.okjunkstore.beta.dashboard.DashboardActivity;
 import com.okjunkstore.beta.model.FcmHttpV1Request;
-import com.okjunkstore.beta.model.PushNotification;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -94,7 +88,7 @@ public class OrderActivity extends AppCompatActivity {
 
 //// ////Weight radio btn
     RadioGroup radioGroup;
-    TextView atleast;
+    TextView atLeast;
 //// ////Weight radio btn
 
 
@@ -108,12 +102,6 @@ public class OrderActivity extends AppCompatActivity {
     ArrayList<String> selectedChipData;
 /////  ///  //items
 
-   /* MaterialCardView selectCard;
-    TextView tvCourses;
-    boolean[] selectedCourses;
-    ArrayList<Integer> courseList = new ArrayList<>();
-    String[] courseArray = {"Electronics", "Iron(LOHA)", "NewsPaper", "Plastic", "Steel", "Old MotorBike", "Old car", "Alloys(Copper,Bronze)"};
-*/
     ImageView viewI;
     FloatingActionButton addImageBtn;
     Spinner locality;
@@ -121,7 +109,6 @@ public class OrderActivity extends AppCompatActivity {
     TextInputLayout say, ownerName, phone, address;
     TextView updateBtn;
     Bitmap bitmap;
-    private final int REQ = 1;
 
     String downloadUrl = "";
 
@@ -142,7 +129,7 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
 //// ////Weight radio btn
-        atleast = findViewById(R.id.atleast);
+        atLeast = findViewById(R.id.atleast);
         radioGroup = findViewById(R.id.radio_grp);
         RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
@@ -156,8 +143,8 @@ public class OrderActivity extends AppCompatActivity {
                 // If the radiobutton that has changed in check state is now checked...
                 if (isChecked)
                 {
-                    // Changes the textview's text to "Checked: example radiobutton text"
-                    atleast.setText("I have at least :" + checkedRadioButton.getText() + " material");
+                    // Changes the textView's text to "Checked: example radiobutton text"
+                    atLeast.setText("I have at least : " + checkedRadioButton.getText() + " material");
                 }
             }
         });
@@ -181,37 +168,15 @@ public class OrderActivity extends AppCompatActivity {
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
-       /* datetv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        UserDashboard.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,setListener,year,month,day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
-            }
-        });
-      setListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = day+"/"+month+"/"+year;
-                datetv.setText(date);
-            }
-        };*/
-        dateSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        OrderActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        month = month + 1;
-                        String date = day + "/" + month + "/" + year;
+
+        dateSelect.setOnClickListener(view -> {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(
+                    OrderActivity.this, (datePicker, year1, month1, day1) -> {
+                        month1 = month1 + 1;
+                        String date = day1 + "/" + month1 + "/" + year1;
                         dateSelect.setText(date);
-                    }
-                },year,month,day);
-                datePickerDialog.show();
-            }
+                    },year,month,day);
+            datePickerDialog.show();
         });
 
         dialog = new Dialog(OrderActivity.this);
@@ -245,15 +210,11 @@ public class OrderActivity extends AppCompatActivity {
         alloy = findViewById(R.id.alloysChip);
 
         selectedChipData = new ArrayList<>();
-        CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked){
-                    selectedChipData.add(compoundButton.getText().toString());
-                }
-                else{
-                    selectedChipData.remove(compoundButton.getText().toString());
-                }
+        CompoundButton.OnCheckedChangeListener checkedChangeListener = (compoundButton, isChecked) -> {
+            if (isChecked){
+                selectedChipData.add(compoundButton.getText().toString());
+            } else{
+                selectedChipData.remove(compoundButton.getText().toString());
             }
         };
         plastic.setOnCheckedChangeListener(checkedChangeListener);
@@ -272,16 +233,6 @@ public class OrderActivity extends AppCompatActivity {
         washing.setOnCheckedChangeListener(checkedChangeListener);
         electrics.setOnCheckedChangeListener(checkedChangeListener);
 
-      /*  selectCard = findViewById(R.id.selectCard);
-        tvCourses = findViewById(R.id.tvCourses);
-        selectedCourses = new boolean[courseArray.length];
-        selectCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showCoursesDialoge();
-            }
-        });*/
-
         agree = findViewById(R.id.agree);
         terms = findViewById(R.id.terms);
 
@@ -294,7 +245,7 @@ public class OrderActivity extends AppCompatActivity {
         updateBtn = findViewById(R.id.done);
 
         String[] items = new String[]{"House","Apartment","Shop","School"};
-        locality.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,items));
+        locality.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,items));
 
         locality.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -308,35 +259,25 @@ public class OrderActivity extends AppCompatActivity {
 
         addImageBtn.setOnClickListener(view -> openGallery());
 
-        terms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(OrderActivity.this, TermsAndConditions.class));
-            }
-        });
+        terms.setOnClickListener(view -> startActivity(new Intent(OrderActivity.this, TermsAndConditions.class)));
 
-        updateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!validateOwner() | !validatePhone() | !validateAddress()) {
-                    return;
-                }if (categories.equals("Select Locality")){
-                    Toast.makeText(OrderActivity.this, "Please Select Locality", Toast.LENGTH_SHORT).show();
-                }if (!agree.isChecked()){
-                    Toast.makeText(OrderActivity.this, "Please check the box", Toast.LENGTH_SHORT).show();
-                }
-                else if (bitmap == null){
-                    uploadData();
-                }else {
-                    uploadImage();
-                }
-                String name = ownerName.getEditText().getText().toString();
-                String titleTxt = "Thank You "+name;
-                String bodyTxt = "We Received an Order from : " + categories;
-                PushNotification notification = new PushNotification(new NotificationData(titleTxt,bodyTxt),TOPIC);
-//                sendNotification(notification);
-                sendNotify(titleTxt, bodyTxt);
+        updateBtn.setOnClickListener(view -> {
+            if (!validateOwner() | !validatePhone() | !validateAddress()) {
+                return;
+            }if (categories.equals("Select Locality")){
+                Toast.makeText(OrderActivity.this, "Please Select Locality", Toast.LENGTH_SHORT).show();
+            }if (!agree.isChecked()){
+                Toast.makeText(OrderActivity.this, "Please check the box", Toast.LENGTH_SHORT).show();
             }
+            else if (bitmap == null){
+                uploadData();
+            }else {
+                uploadImage();
+            }
+            String name = ownerName.getEditText().getText().toString();
+            String titleTxt = "Thank You "+name;
+            String bodyTxt = "We Received an Order from : " + categories;
+            sendNotify(titleTxt, bodyTxt);
         });
 //       addImageBtn.setOnClickListener(new View.OnClickListener() {
 ////          @Override
@@ -368,41 +309,23 @@ public class OrderActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                Location location = task.getResult();
-                if (location!= null){
-                    Geocoder geocoder = new Geocoder(OrderActivity.this, Locale.getDefault());
-                    try {
-                        List<Address> addressList = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-                        address.getEditText().setText(addressList.get(0).getAddressLine(0));
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(task -> {
+            Location location = task.getResult();
+            if (location!= null){
+                Geocoder geocoder = new Geocoder(OrderActivity.this, Locale.getDefault());
+                try {
+                    List<Address> addressList = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+                    address.getEditText().setText(addressList.get(0).getAddressLine(0));
+                }catch (IOException e){
+                    e.printStackTrace();
                 }
-                else {
-                    Toast.makeText(OrderActivity.this, "Location Null Error", Toast.LENGTH_SHORT).show();
-                }
+            }
+            else {
+                Toast.makeText(OrderActivity.this, "Location Null Error", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-     private void sendNotification(PushNotification notification) {
-        ApiUtilities.getClient().sendNotification(notification).enqueue(new Callback<PushNotification>() {
-            @Override
-            public void onResponse(Call<PushNotification> call, Response<PushNotification> response) {
-                if (response.isSuccessful())
-                    Toast.makeText(OrderActivity.this, "success", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(OrderActivity.this, "error", Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onFailure(Call<PushNotification> call, Throwable t) {
-                Toast.makeText(OrderActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
     private void sendNotify(String title, String body){
         ApiInterface apiService = retrofit1.create(ApiInterface.class);
 
@@ -443,55 +366,6 @@ public class OrderActivity extends AppCompatActivity {
         });
     }
 
-    /*
-    // Select Items by dropdown
-    private void showCoursesDialoge() {
-         AlertDialog.Builder builder = new AlertDialog.Builder(UserDashboard.this);
-         builder.setTitle("Select Items");
-         builder.setCancelable(false);
-
-         builder.setMultiChoiceItems(courseArray, selectedCourses, new DialogInterface.OnMultiChoiceClickListener() {
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i, boolean b) {
-                 if (b){
-                     courseList.add(i);
-                     Collections.sort(courseList);
-                 }else{
-                     courseList.remove(i);
-                 }
-             }
-         }).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i) {
-                 StringBuilder stringBuilder = new StringBuilder();
-                 for (int j=0; j < courseList.size(); j++){
-                     stringBuilder.append(courseArray[courseList.get(j)]);
-
-                     //check Condition
-                     if (j != courseList.size() - 1){
-                         stringBuilder.append(", ");
-                     }
-                     tvCourses.setText(stringBuilder.toString());
-                 }
-             }
-         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i) {
-                 dialogInterface.dismiss();
-             }
-         }).setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i) {
-                 for (int j = 0; j < selectedCourses.length; j++){
-                     selectedCourses[j] = false;
-                     courseList.clear();
-                     tvCourses.setText("");
-                 }
-             }
-         });
-         builder.show();
-     }*/
-
      private void uploadImage() {
          progressDialog.setMessage("Please wait, Uploading...");
          progressDialog.setCanceledOnTouchOutside(false);
@@ -528,7 +402,7 @@ public class OrderActivity extends AppCompatActivity {
      }
 
      private void uploadData() {
-         progressDialog.setMessage("Please wait..");
+         progressDialog.setTitle("Please wait..");
          progressDialog.setCanceledOnTouchOutside(false);
          progressDialog.show();
 
@@ -540,11 +414,8 @@ public class OrderActivity extends AppCompatActivity {
         String contact = phone.getEditText().getText().toString();
         String Add = address.getEditText().getText().toString();
 
-//        String item = tvCourses.getText().toString();
-//        plastic,iron,steel,newspaper,bike,car,tv,fridge,oven,ac,fan,cooler,washing,electrics;
-
-         String TandC = agree.getText().toString();
-         String scheduleWeight = atleast.getText().toString();
+         String tAndC = agree.getText().toString();
+         String scheduleWeight = atLeast.getText().toString();
          String junkItems = selectedChipData.toString();
          String scheduleDate = dateSelect.getText().toString();
          String item = scheduleWeight + junkItems + "[Schedule DATE - " + scheduleDate + "]";
@@ -557,20 +428,12 @@ public class OrderActivity extends AppCompatActivity {
          SimpleDateFormat currentTime = new SimpleDateFormat("hh-mm a");
          String time = currentTime.format(calForTime.getTime());
 
-         ownerOrderData noticeData = new ownerOrderData(owner,contact,title,downloadUrl,date,time,uniqueKey,item,TandC,Add);
-         dbRef.child(owner).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
-             @Override
-             public void onSuccess(Void unused) {
-                 progressDialog.dismiss();
-                 Toast.makeText(OrderActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                 openOrderDialog();
-             }
-         }).addOnFailureListener(new OnFailureListener() {
-             @Override
-             public void onFailure(@NonNull Exception e) {
-                 Toast.makeText(OrderActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-             }
-         });
+         ownerOrderData noticeData = new ownerOrderData(owner,contact,title,downloadUrl,date,time,uniqueKey,item, tAndC,Add);
+         dbRef.child(owner).setValue(noticeData).addOnSuccessListener(unused -> {
+             progressDialog.dismiss();
+             Toast.makeText(OrderActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+             openOrderDialog();
+         }).addOnFailureListener(e -> Toast.makeText(OrderActivity.this, "Failed", Toast.LENGTH_SHORT).show());
      }
 
     private void openOrderDialog() {
@@ -580,21 +443,15 @@ public class OrderActivity extends AppCompatActivity {
         TextView btn = dialog.findViewById(R.id.our);
         TextView close = dialog.findViewById(R.id.close);
 
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-                startActivity(new Intent(OrderActivity.this, DashboardActivity.class));
-                finish();
-            }
+        close.setOnClickListener(view -> {
+            dialog.dismiss();
+            startActivity(new Intent(OrderActivity.this, DashboardActivity.class));
+            finish();
         });
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-                startActivity(new Intent(OrderActivity.this,UserProfile.class));
-                finish();
-            }
+        btn.setOnClickListener(view -> {
+            dialog.dismiss();
+            startActivity(new Intent(OrderActivity.this,UserProfile.class));
+            finish();
         });
         dialog.show();
         dialog.setCancelable(false);
@@ -603,7 +460,8 @@ public class OrderActivity extends AppCompatActivity {
 
     private void openGallery() {
          Intent pickImage = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-         startActivityForResult(pickImage, REQ);
+        int REQ = 1;
+        startActivityForResult(pickImage, REQ);
      }
      @Override
      protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -612,7 +470,7 @@ public class OrderActivity extends AppCompatActivity {
                  Uri uri = data.getData();
                  bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
              } catch (IOException e) {
-                 e.printStackTrace();
+                 Log.e("ImagePicking Error", "OnActivityResult : " + e);
              }
              viewI.setImageBitmap(bitmap);
          }
@@ -642,7 +500,7 @@ public class OrderActivity extends AppCompatActivity {
      }
 
      private boolean validatePhone() {
-         String val = (phone.getEditText().getText()).toString();
+         String val = phone.getEditText().getText().toString();
          if (val.isEmpty()) {
              phone.setError("Field can not be empty");
              return false;

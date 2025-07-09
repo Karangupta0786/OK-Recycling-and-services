@@ -28,9 +28,6 @@ import java.util.List;
 
 public class UserProfile extends AppCompatActivity {
 
-//    EditText yourname, youremail, yourphoneNo, yourpassword;
-//    TextView fullnameLabel, usernameLabel;
-
     private RecyclerView houseOwners, apartmentOwners, shopOwners, schoolOwners;
     private LinearLayout houseNoData, apartmentNoData, shopNoData, schoolNoData;
     private List<ownerOrderData> list1,list2,list3,list4;
@@ -62,39 +59,6 @@ public class UserProfile extends AppCompatActivity {
         schoolOwnerData();
         houseOwnerData();
 
-       /* //Hooks
-        yourname = findViewById(R.id.full_name_profile);
-        youremail = findViewById(R.id.email_profile);
-        yourphoneNo = findViewById(R.id.phone_no_profile);
-        yourpassword = findViewById(R.id.password_profile);
-        fullnameLabel = findViewById(R.id.fullname_field);
-        usernameLabel = findViewById(R.id.username_field);
-
-        //ShowAllData
-        showAllUserData();
-    }
-    private void showAllUserData() {
-        Intent intent = getIntent();
-
-        String user_username = intent.getStringExtra("username");
-        String user_name = intent.getStringExtra("name");
-        String user_email = intent.getStringExtra("email");
-        String user_phoneNo = intent.getStringExtra("phoneNo");
-        String user_password = intent.getStringExtra("password");
-
-        fullnameLabel.setText(user_name);
-        usernameLabel.setText(user_username);
-        yourname.setText(user_name);
-        youremail.setText(user_email);
-        yourphoneNo.setText(user_phoneNo);
-        yourpassword.setText(user_password);
-    }
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),RetailerDashboard.class));
-        finish();
-    }
-*/
     }
 
     private void houseOwnerData() {
